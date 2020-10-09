@@ -41,8 +41,11 @@ public class PackedStock implements Serializable {
 	@Column(name = "packed_price_per")
 	private String packedPricePer;
 
+	@Column(name = "packed_litre")
+	private Integer packedLitre;
+
 	@Column(name = "packed_quantity")
-	private String packedQuantity;
+	private Integer packedQuantity;
 
 	// bi-directional many-to-one association to PackType
 	@ManyToOne
@@ -93,11 +96,19 @@ public class PackedStock implements Serializable {
 		this.packedPricePer = packedPricePer;
 	}
 
-	public String getPackedQuantity() {
-		return this.packedQuantity;
+	public Integer getPackedLitre() {
+		return packedLitre;
 	}
 
-	public void setPackedQuantity(String packedQuantity) {
+	public void setPackedLitre(Integer packedLitre) {
+		this.packedLitre = packedLitre;
+	}
+
+	public Integer getPackedQuantity() {
+		return packedQuantity;
+	}
+
+	public void setPackedQuantity(Integer packedQuantity) {
 		this.packedQuantity = packedQuantity;
 	}
 
